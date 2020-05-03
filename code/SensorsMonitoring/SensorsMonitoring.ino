@@ -19,6 +19,7 @@
 const char* ssid = "xxxcccmmm";
 const char* password = "23091994";
 ESP8266WebServer server(80);
+const char *post_url = "https://weatheranalyzertelegrambotserver.azurewebsites.net/getSensorsData";
 
 const int DHTPin = 13;
 
@@ -72,50 +73,50 @@ void loop(void)
 
 void setUpEndpoints() 
 {
-  server.on("/", [](){
+  server.on(post_url, HTTP_POST, [](){
     String webPageValue = WebBuild(0);
     server.send(200, "text/html", webPageValue);
   });
   
-  server.on("/dhtCelsius", [](){
-    String webPageValue = WebBuild(1);
-    server.send(200, "text/html", webPageValue);
-  });
-
-  server.on("/dhtFahrenheit", [](){
-    String webPageValue = WebBuild(2);
-    server.send(200, "text/html", webPageValue);
-  });
-
-  server.on("/dhtHumidity", [](){
-    String webPageValue = WebBuild(3);
-    server.send(200, "text/html", webPageValue);
-  });
-
-  server.on("/dhtCelsiusHeatIndex", [](){
-    String webPageValue = WebBuild(4);
-    server.send(200, "text/html", webPageValue);
-  });
-
-  server.on("/dhtFahrenheitHeatIndex", [](){
-    String webPageValue = WebBuild(5);
-    server.send(200, "text/html", webPageValue);
-  });
-
-  server.on("/bmpCelsius", [](){
-    String webPageValue = WebBuild(6);
-    server.send(200, "text/html", webPageValue);
-  });
-
-  server.on("/bmpPressure", [](){
-    String webPageValue = WebBuild(7);
-    server.send(200, "text/html", webPageValue);
-  });
-
-  server.on("/bmpAltitude", [](){
-    String webPageValue = WebBuild(8);
-    server.send(200, "text/html", webPageValue);
-  });
+//  server.on("/dhtCelsius", [](){
+//    String webPageValue = WebBuild(1);
+//    server.send(200, "text/html", webPageValue);
+//  });
+//
+//  server.on("/dhtFahrenheit", [](){
+//    String webPageValue = WebBuild(2);
+//    server.send(200, "text/html", webPageValue);
+//  });
+//
+//  server.on("/dhtHumidity", [](){
+//    String webPageValue = WebBuild(3);
+//    server.send(200, "text/html", webPageValue);
+//  });
+//
+//  server.on("/dhtCelsiusHeatIndex", [](){
+//    String webPageValue = WebBuild(4);
+//    server.send(200, "text/html", webPageValue);
+//  });
+//
+//  server.on("/dhtFahrenheitHeatIndex", [](){
+//    String webPageValue = WebBuild(5);
+//    server.send(200, "text/html", webPageValue);
+//  });
+//
+//  server.on("/bmpCelsius", [](){
+//    String webPageValue = WebBuild(6);
+//    server.send(200, "text/html", webPageValue);
+//  });
+//
+//  server.on("/bmpPressure", [](){
+//    String webPageValue = WebBuild(7);
+//    server.send(200, "text/html", webPageValue);
+//  });
+//
+//  server.on("/bmpAltitude", [](){
+//    String webPageValue = WebBuild(8);
+//    server.send(200, "text/html", webPageValue);
+//  });
 }
 
 String WebBuild(int endpointNumber) 

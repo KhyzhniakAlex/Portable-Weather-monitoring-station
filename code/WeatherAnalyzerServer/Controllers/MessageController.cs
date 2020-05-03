@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Results;
-using WeatherAnalyzerServer.Models;
+using WeatherAnalyzerServer.Services;
 using Telegram.Bot.Types;
 using System.Threading.Tasks;
 
