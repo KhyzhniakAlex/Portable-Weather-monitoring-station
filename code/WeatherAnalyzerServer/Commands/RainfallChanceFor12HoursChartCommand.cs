@@ -4,9 +4,9 @@ using Telegram.Bot.Types;
 
 namespace WeatherAnalyzerServer.Commands
 {
-    public class PrecipitationFor12HoursChartCommand : Command
+    public class RainfallChanceFor12HoursChartCommand : Command
     {
-        public override string Name => "displayChanceOfRainfall";
+        public override string Name => "display_rainfall_chance_chart";
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {

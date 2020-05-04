@@ -2,15 +2,13 @@
 #include <Adafruit_BMP280.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
-#include <ESP8266WebServer.h>
 #include <DHT.h>
 
 #define DHTTYPE DHT22
 
 const char* ssid = "xxxcccmmm";
 const char* password = "23091994";
-ESP8266WebServer server(80);
-const char *post_url = "https://weatheranalyzertelegrambotserver.azurewebsites.net/getSensorsData";
+const char* post_url = "https://weatheranalyzertelegrambotserver.azurewebsites.net/getSensorsData";
 
 const int DHTPin = 13;
 
@@ -30,6 +28,9 @@ void setup()
     delay(3000);
   }
 
+  WiFi.mode(WIFI_OFF);
+  delay(1000);
+  WiFi.mode(WIFI_STA);
   Serial.print("\nConnecting to " + String(ssid));
   WiFi.begin(ssid, password);
 
@@ -37,9 +38,8 @@ void setup()
     delay(500);
     Serial.print(".");
   }
+  
   Serial.println("\nWiFi connected");
-  server.begin();
-
   Serial.print("\nESP IP = ");
   Serial.print(WiFi.localIP());
 }
@@ -47,7 +47,7 @@ void setup()
 void loop(void)
 {
   HTTPClient http;
-  http.begin("http://192.168.0.110:9000/getSensorData");
+  http.begin(post_url);
   http.addHeader("Content-Type", "text/plain");
   
   JSONBuild();
@@ -58,51 +58,43 @@ void loop(void)
   
   Serial.println("httpCode = " + String(httpCode));
   Serial.print("payload = " + String(payload));
+  Serial.println("---------------------------------");
 
-  delay(15000);
+  delay(30000);
 }
 
 void JSONBuild()
 {
-  float humidityValue = dht.readHumidity();
-  float celsiusValue = dht.readTemperature();
-  // считываем температуру в Фаренгейтах (isFahrenheit = true):
-  float fahrenheitValue = dht.readTemperature(true);
-  float celsiusHeatIndexValue = dht.computeHeatIndex(celsiusValue, humidityValue, false);
-  float fahrenheitHeatIndexValue = dht.computeHeatIndex(fahrenheitValue, humidityValue);
+  float temperature = dht.readTemperature();
+  float humidity = dht.readHumidity();
+  float heatIndex = dht.computeHeatIndex(temperature, humidity, false);
 
-  float pressureValue = bmp.readPressure() / 133.33;
-  float celsiusValueBMP280 = bmp.readTemperature();
+  float pressure = bmp.readPressure() / 133.33;
+  float temperatureBMP280 = bmp.readTemperature();
 
-  setJsonObject(celsiusValue, fahrenheitValue, humidityValue, celsiusHeatIndexValue, fahrenheitHeatIndexValue, pressureValue, celsiusValueBMP280);
-  displayOnPortMonitor(celsiusValue, fahrenheitValue, humidityValue, celsiusHeatIndexValue, fahrenheitHeatIndexValue, pressureValue, celsiusValueBMP280);
+  setJsonObject(temperature, humidity, heatIndex, pressure, temperatureBMP280);
+  displayOnPortMonitor(temperature, humidity, heatIndex, pressure, temperatureBMP280);
 }
 
 
 
-void displayOnPortMonitor(float celsiusDHT, float fahrenheit, float humidity, float celsiusHeatIndex, float fahrenheitHeatIndex, float pressure, float celsiusBMP280)
+void displayOnPortMonitor(float temperatureDHT, float humidity, float heatIndex, float pressure, float temperatureBMP)
 {
   Serial.println("DHT22:");
+  Serial.println("  Temperature: " + String(temperatureDHT) + "*C");
   Serial.println("  Humidity: " + String(humidity) + "%");
-  Serial.println("  Temperature:");
-  Serial.println("    Celsius: " + String(celsiusDHT) + "*C");
-  Serial.println("    Fahrenheit: " + String(fahrenheit) + "*F");
-  Serial.println("  Heat Index:");
-  Serial.println("    Celsius: " + String(celsiusHeatIndex) + "*C");
-  Serial.println("    Fahrenheit: " + String(fahrenheitHeatIndex) + "*F");
+  Serial.println("  Heat Index: " + String(heatIndex) + "*C");
 
   Serial.println("BMP280:");
   Serial.println("  Pressure: " + String(pressure) + "mm Hg");
-  Serial.println("  Celsius: " + String(celsiusBMP280) + "*C");
+  Serial.println("  Temperature: " + String(temperatureBMP) + "*C");
   Serial.println("---------------------------------");
 }
 
-void setJsonObject(float celsiusDHT, float fahrenheit, float humidity, float celsiusHeatIndex, float fahrenheitHeatIndex, float pressure, float celsiusBMP280) {
-  doc["celsiusDHT"] = celsiusDHT;
-  doc["fahrenheit"] = fahrenheit;
+void setJsonObject(float temperatureDHT, float humidity, float heatIndex, float pressure, float temperatureBMP) {
+  doc["temperatureDHT"] = temperatureDHT;
   doc["humidity"] = humidity;
-  doc["celsiusHeatIndex"] = celsiusHeatIndex;
-  doc["fahrenheitHeatIndex"] = fahrenheitHeatIndex;
+  doc["heatIndex"] = heatIndex;
   doc["pressure"] = pressure;
-  doc["celsiusBMP280"] = celsiusBMP280;
+  doc["temperatureBMP"] = temperatureBMP;
 }

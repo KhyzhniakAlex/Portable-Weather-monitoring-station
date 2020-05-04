@@ -6,7 +6,7 @@ namespace WeatherAnalyzerServer.Commands
 {
     public class GetHeatIndexCommand : Command
     {
-        public override string Name => "getHeatIndex";
+        public override string Name => "get_heat_index";
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {

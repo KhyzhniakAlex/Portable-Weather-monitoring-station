@@ -6,7 +6,7 @@ namespace WeatherAnalyzerServer.Commands
 {
     public class GetHumidityCommand : Command
     {
-        public override string Name => "getHumidity";
+        public override string Name => "get_humidity";
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {
