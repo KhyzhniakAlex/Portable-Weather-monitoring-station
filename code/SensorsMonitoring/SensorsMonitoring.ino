@@ -8,7 +8,8 @@
 
 const char* ssid = "xxxcccmmm";
 const char* password = "23091994";
-const char* post_url = "https://weatheranalyzertelegrambotserver.azurewebsites.net/getSensorsData";
+const char* post_url = "https://weatheranalyzertelegrambotserver.azurewebsites.net/getSensorData";
+//const char* post_url = "https://localhost:44389/getSensorData";
 
 const int DHTPin = 13;
 
@@ -42,13 +43,14 @@ void setup()
   Serial.println("\nWiFi connected");
   Serial.print("\nESP IP = ");
   Serial.print(WiFi.localIP());
+  Serial.println();
 }
 
 void loop(void)
 {
   HTTPClient http;
   http.begin(post_url);
-  http.addHeader("Content-Type", "text/plain");
+  http.addHeader("Content-Type", "application/json");
   
   JSONBuild();
   String json;
@@ -57,10 +59,12 @@ void loop(void)
   String payload = http.getString();
   
   Serial.println("httpCode = " + String(httpCode));
-  Serial.print("payload = " + String(payload));
+  Serial.println("payload = " + String(payload));
   Serial.println("---------------------------------");
 
-  delay(30000);
+  http.end();
+
+  delay(5000);
 }
 
 void JSONBuild()
@@ -68,7 +72,6 @@ void JSONBuild()
   float temperature = dht.readTemperature();
   float humidity = dht.readHumidity();
   float heatIndex = dht.computeHeatIndex(temperature, humidity, false);
-
   float pressure = bmp.readPressure() / 133.33;
   float temperatureBMP280 = bmp.readTemperature();
 

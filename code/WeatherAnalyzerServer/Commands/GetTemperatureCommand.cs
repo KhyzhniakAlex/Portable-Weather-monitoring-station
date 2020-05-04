@@ -14,7 +14,7 @@ namespace WeatherAnalyzerServer.Commands
             var chatId = message.Chat.Id;
             var messageId = message.MessageId;
 
-            double? temperature = new SensorDataController().GetTemperature();
+            double? temperature = SensorDataController.Temperature;
             string returnMsg = temperature != null ? string.Format("Current temperature = {0}℃", temperature) : "Error. Some problems with sensor";
 
             return await client.SendTextMessageAsync(chatId, returnMsg, replyToMessageId: messageId);

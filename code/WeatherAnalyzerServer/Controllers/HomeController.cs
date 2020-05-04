@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace WeatherAnalyzerServer.Controllers
 {
@@ -10,7 +6,13 @@ namespace WeatherAnalyzerServer.Controllers
     {
         public string Index()
         {
-            return "It's a Weather Analyzer Server";
+            double? temperature = SensorDataController.Temperature;
+            double? humidity = SensorDataController.Humidity;
+            double? pressure = SensorDataController.Pressure;
+            double? heatIndex = SensorDataController.HeatIndex;
+            return temperature != null && humidity != null && pressure != null && heatIndex != null
+                ? temperature.ToString() + humidity.ToString() + pressure.ToString() + heatIndex.ToString()
+                : "It's a Weather Analyzer Server";
         }
     }
 }

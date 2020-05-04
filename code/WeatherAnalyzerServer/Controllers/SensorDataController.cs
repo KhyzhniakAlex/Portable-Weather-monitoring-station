@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.Results;
 using WeatherAnalyzerServer.Models;
 
 namespace WeatherAnalyzerServer.Controllers
 {
-    public class SensorDataController
+    public class SensorDataController : ApiController
     {
-        private double Temperature { get; set; }
-        private double Humidity { get; set; }
-        private double HeatIndex { get; set; }
-        private double Pressure { get; set; }
+        public static double? Temperature { get; set; }
+        public static double? Humidity { get; set; }
+        public static double? HeatIndex { get; set; }
+        public static double? Pressure { get; set; }
 
         [HttpPost]
         [Route("getSensorData")]
-        public void GetSensorData(SensorsData data)
+        public OkResult GetSensorData(SensorsData data)
         {
             if (data != null)
             {
@@ -25,11 +22,7 @@ namespace WeatherAnalyzerServer.Controllers
                 HeatIndex = data.HeatIndex;
                 Pressure = data.Pressure;
             }
-        }
-
-        public double GetTemperature()
-        {
-            return Temperature;
+            return Ok();
         }
     }
 }
