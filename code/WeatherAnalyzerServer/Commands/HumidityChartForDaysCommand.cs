@@ -6,7 +6,7 @@ namespace WeatherAnalyzerServer.Commands
 {
     public class HumidityChartForDaysCommand : Command
     {
-        public override string Name => "displayHumidityForDays";
+        public override string Name => "display_humidity_for_days";
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {

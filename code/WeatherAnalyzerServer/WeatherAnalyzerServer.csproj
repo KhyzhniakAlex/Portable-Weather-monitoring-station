@@ -157,11 +157,12 @@
     <Compile Include="Commands\HeatIndexFor12HoursChartCommand.cs" />
     <Compile Include="Commands\HeatIndexHelperChartCommand.cs" />
     <Compile Include="Commands\HumidityChartForDaysCommand.cs" />
-    <Compile Include="Commands\PrecipitationFor12HoursChartCommand.cs" />
+    <Compile Include="Commands\RainfallChanceFor12HoursChartCommand.cs" />
     <Compile Include="Commands\PressureChartForDaysCommand.cs" />
     <Compile Include="Commands\TemperatureChartForDaysCommand.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\SensorDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +175,7 @@
     <Compile Include="Models\HumidityForHours.cs" />
     <Compile Include="Models\PressureForDays.cs" />
     <Compile Include="Models\PressureForHours.cs" />
+    <Compile Include="Models\SensorsData.cs" />
     <Compile Include="Models\TemperatureForDays.cs" />
     <Compile Include="Models\TemperatureForHours.cs" />
     <Compile Include="Services\Bot.cs" />

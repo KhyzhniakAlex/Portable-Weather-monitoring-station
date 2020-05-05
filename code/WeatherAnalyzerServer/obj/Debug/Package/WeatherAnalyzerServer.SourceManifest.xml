@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\Package\PackageTmp" />
+  <setAcl path="D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

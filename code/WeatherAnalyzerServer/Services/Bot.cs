@@ -32,7 +32,7 @@ namespace WeatherAnalyzerServer.Services
                 new PressureChartForDaysCommand(),
                 new HeatIndexChartForDaysCommand(),
                 new HeatIndexHelperChartCommand(),
-                new PrecipitationFor12HoursChartCommand(),
+                new RainfallChanceFor12HoursChartCommand(),
                 new HeatIndexFor12HoursChartCommand()
             };
 

@@ -6,7 +6,7 @@ namespace WeatherAnalyzerServer.Commands
 {
     public class TemperatureChartForDaysCommand : Command
     {
-        public override string Name => "displayTemperatureForDays";
+        public override string Name => "display_temperature_for_days";
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {

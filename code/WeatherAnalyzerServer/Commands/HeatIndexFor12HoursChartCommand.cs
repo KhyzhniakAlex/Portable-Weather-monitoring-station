@@ -6,7 +6,7 @@ namespace WeatherAnalyzerServer.Commands
 {
     public class HeatIndexFor12HoursChartCommand : Command
     {
-        public override string Name => "displayHeatIndexChanging";
+        public override string Name => "display_heat_index_changing";
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {
