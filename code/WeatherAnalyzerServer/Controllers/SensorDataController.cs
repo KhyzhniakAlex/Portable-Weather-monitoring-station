@@ -1,9 +1,12 @@
-﻿using System.Web.Http;
-using System.Web.Http.Results;
+﻿using System.Net.Http;
+using System.Web.Http;
+using System.Net;
 using WeatherAnalyzerServer.Models;
+using System;
 
 namespace WeatherAnalyzerServer.Controllers
 {
+    [RoutePrefix("api/[controller]")]
     public class SensorDataController : ApiController
     {
         public static double? Temperature { get; set; }
@@ -12,17 +15,23 @@ namespace WeatherAnalyzerServer.Controllers
         public static double? Pressure { get; set; }
 
         [HttpPost]
-        [Route("getSensorData")]
-        public OkResult GetSensorData(SensorsData data)
+        public HttpResponseMessage GetSensorData(SensorsData data)
         {
-            if (data != null)
+            try
             {
-                Temperature = (data.TemperatureDHT + data.TemperatureBMP) / 2.0;
-                Humidity = data.Humidity;
-                HeatIndex = data.HeatIndex;
-                Pressure = data.Pressure;
+                if (data != null)
+                {
+                    Temperature = Math.Round((data.TemperatureDHT + data.TemperatureBMP) / 2.0, 2);
+                    Humidity = Math.Round(data.Humidity, 2);
+                    HeatIndex = Math.Round(data.HeatIndex, 2);
+                    Pressure = Math.Round(data.Pressure, 2);
+                }
+                return Request.CreateResponse(HttpStatusCode.OK);
+            } 
+            catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
-            return Ok();
         }
     }
 }

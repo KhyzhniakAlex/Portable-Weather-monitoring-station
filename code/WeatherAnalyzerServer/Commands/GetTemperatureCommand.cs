@@ -11,13 +11,12 @@ namespace WeatherAnalyzerServer.Commands
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {
-            var chatId = message.Chat.Id;
-            var messageId = message.MessageId;
-
             double? temperature = SensorDataController.Temperature;
-            string returnMsg = temperature != null ? string.Format("Current temperature = {0}℃", temperature) : "Error. Some problems with sensor";
+            string returnMsg = temperature != null 
+                ? string.Format("Current temperature = {0}℃", temperature) 
+                : "Error. Some problems with sensor";
 
-            return await client.SendTextMessageAsync(chatId, returnMsg, replyToMessageId: messageId);
+            return await client.SendTextMessageAsync(message.Chat.Id, returnMsg);
         }
     }
 }

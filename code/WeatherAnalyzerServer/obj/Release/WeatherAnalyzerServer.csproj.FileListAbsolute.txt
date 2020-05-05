@@ -169,3 +169,11 @@ D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnal
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Release\WeatherAnalyzerServer.csproj.CopyComplete
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Release\WeatherAnalyzerServer.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Release\WeatherAnalyzerServer.pdb
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.dll
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.SqlServer.dll
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.dll
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.Entity.EF6.dll
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.xml
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.SqlServer.xml
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.xml
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.Entity.EF6.xml

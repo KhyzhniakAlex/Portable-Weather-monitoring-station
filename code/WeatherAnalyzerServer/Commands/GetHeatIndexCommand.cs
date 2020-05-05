@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using WeatherAnalyzerServer.Controllers;
 
 namespace WeatherAnalyzerServer.Commands
 {
@@ -10,11 +11,12 @@ namespace WeatherAnalyzerServer.Commands
 
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {
-            var chatId = message.Chat.Id;
-            var messageId = message.MessageId;
+            double ? heatIndex = SensorDataController.HeatIndex;
+            string returnMsg = heatIndex != null
+                ? string.Format("Current heatIndex = {0}℃", heatIndex)
+                : "Error. Some problems with sensor";
 
-            //TODO: Command logic
-            return null;
+            return await client.SendTextMessageAsync(message.Chat.Id, returnMsg);
         }
     }
 }

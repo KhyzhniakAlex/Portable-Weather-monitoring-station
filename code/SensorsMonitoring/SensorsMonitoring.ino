@@ -8,8 +8,7 @@
 
 const char* ssid = "xxxcccmmm";
 const char* password = "23091994";
-const char* post_url = "https://weatheranalyzertelegrambotserver.azurewebsites.net/getSensorData";
-//const char* post_url = "https://localhost:44389/getSensorData";
+const char* post_url = "http://weatheranalyzertelegrambotserver.azurewebsites.net/api/sensorData";
 
 const int DHTPin = 13;
 
@@ -49,9 +48,13 @@ void setup()
 void loop(void)
 {
   HTTPClient http;
-  http.begin(post_url);
+  while(!http.begin(post_url))
+  {
+    Serial.println("Could connect to backend server");
+    delay(2500);
+  }
   http.addHeader("Content-Type", "application/json");
-  
+
   JSONBuild();
   String json;
   serializeJsonPretty(doc, json);
@@ -59,12 +62,11 @@ void loop(void)
   String payload = http.getString();
   
   Serial.println("httpCode = " + String(httpCode));
-  Serial.println("payload = " + String(payload));
   Serial.println("---------------------------------");
 
   http.end();
 
-  delay(5000);
+  delay(10000);
 }
 
 void JSONBuild()
