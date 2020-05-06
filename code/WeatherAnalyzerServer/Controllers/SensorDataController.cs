@@ -30,6 +30,11 @@ namespace WeatherAnalyzerServer.Controllers
                     cache.StringSet("Humidity", Math.Round(data.Humidity, 2));
                     cache.StringSet("Pressure", Math.Round(data.Pressure, 2));
                     cache.StringSet("HeatIndex", Math.Round(data.HeatIndex, 2));
+
+                    //cache.KeyExpire("Temperature", new TimeSpan(24, 0, 0));
+                    //cache.KeyExpire("Humidity", new TimeSpan(24, 0, 0));
+                    //cache.KeyExpire("Pressure", new TimeSpan(24, 0, 0));
+                    //cache.KeyExpire("HeatIndex", new TimeSpan(24, 0, 0));
                 }
                 return Request.CreateResponse(HttpStatusCode.OK);
             } 
