@@ -1,6 +1,6 @@
-.vs/
-bin/
-obj/
-**/[Pp]ackages/*
+/code/WeatherAnalyzerServer/.vs/*
+/code/WeatherAnalyzerServer/bin/*
+/code/WeatherAnalyzerServer/obj/*
+/code/WeatherAnalyzerServer/packages/*
 
-*.nupkg
+**.nupkg
