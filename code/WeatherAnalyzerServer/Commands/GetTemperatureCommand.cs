@@ -1,7 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using System.Configuration;
+using StackExchange.Redis;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using WeatherAnalyzerServer.Controllers;
 
 namespace WeatherAnalyzerServer.Commands
 {
@@ -9,10 +11,18 @@ namespace WeatherAnalyzerServer.Commands
     {
         public override string Name => "get_temperature";
 
+        private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
+        {
+            string cacheConnection = ConfigurationManager.AppSettings["CacheConnection"].ToString();
+            return ConnectionMultiplexer.Connect(cacheConnection);
+        });
+
         public override async Task<Message> Execute(Message message, TelegramBotClient client)
         {
-            double? temperature = SensorDataController.Temperature;
-            string returnMsg = temperature != null 
+            IDatabase cache = lazyConnection.Value.GetDatabase();
+
+            string temperature = cache.StringGet("Temperature").ToString();
+            string returnMsg = temperature != "(nil)" && temperature != null
                 ? string.Format("Current temperature = {0}℃", temperature) 
                 : "Error. Some problems with sensor";
 
