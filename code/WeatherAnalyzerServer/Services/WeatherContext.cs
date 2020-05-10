@@ -3,12 +3,12 @@ using WeatherAnalyzerServer.Models;
 
 namespace WeatherAnalyzerServer.Services
 {
-    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class WeatherContext : DbContext
     {
-        public WeatherContext() : base("conn")
+        public WeatherContext() : base("DbConnection")
         { }
 
+        public DbSet<ControllerLocation> ControllerLocation { get; set; }
         public DbSet<TemperatureForDays> TemperatureForDays { get; set; }
         public DbSet<TemperatureForHours> TemperatureForHours { get; set; }
         public DbSet<HumidityForDays> HumidityForDays { get; set; }

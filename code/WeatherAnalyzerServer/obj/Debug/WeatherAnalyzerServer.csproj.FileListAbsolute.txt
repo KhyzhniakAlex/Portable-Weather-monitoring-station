@@ -171,12 +171,8 @@ D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnal
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Newtonsoft.Json.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.SqlServer.dll
-D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.dll
-D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.Entity.EF6.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\EntityFramework.SqlServer.xml
-D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.xml
-D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\MySql.Data.Entity.EF6.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\BouncyCastle.Crypto.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Google.Protobuf.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\K4os.Compression.LZ4.dll
@@ -196,8 +192,6 @@ D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnal
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\System.Runtime.CompilerServices.Unsafe.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\System.Threading.Channels.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\System.Threading.Tasks.Extensions.dll
-D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Ubiety.Dns.Core.dll
-D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Zstandard.Net.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Google.Protobuf.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\K4os.Compression.LZ4.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\K4os.Compression.LZ4.Streams.xml

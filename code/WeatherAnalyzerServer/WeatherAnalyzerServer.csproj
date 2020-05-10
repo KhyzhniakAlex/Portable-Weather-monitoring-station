@@ -77,12 +77,6 @@
     <Reference Include="Microsoft.Web.RedisSessionStateProvider, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.RedisSessionStateProvider.4.0.1\lib\net462\Microsoft.Web.RedisSessionStateProvider.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.8.0.20\lib\net452\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.Entity.6.10.9\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -196,9 +190,6 @@
     <Reference Include="Telegram.Bot, Version=15.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Telegram.Bot.15.5.1\lib\net45\Telegram.Bot.dll</HintPath>
     </Reference>
-    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.8.0.20\lib\net452\Ubiety.Dns.Core.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -206,9 +197,6 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.8.0.20\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -239,19 +227,20 @@
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\Base.cs" />
     <Compile Include="Models\ControllerLocation.cs" />
-    <Compile Include="Models\HeatIndexForDays.cs" />
-    <Compile Include="Models\HeatIndexForHours.cs" />
-    <Compile Include="Models\HumidityForDays.cs" />
-    <Compile Include="Models\HumidityForHours.cs" />
-    <Compile Include="Models\PressureForDays.cs" />
-    <Compile Include="Models\PressureForHours.cs" />
+    <Compile Include="Models\SensorTableModels\HeatIndexForDays.cs" />
+    <Compile Include="Models\SensorTableModels\HeatIndexForHours.cs" />
+    <Compile Include="Models\SensorTableModels\HumidityForDays.cs" />
+    <Compile Include="Models\SensorTableModels\HumidityForHours.cs" />
+    <Compile Include="Models\SensorTableModels\PressureForDays.cs" />
+    <Compile Include="Models\SensorTableModels\PressureForHours.cs" />
     <Compile Include="Models\SensorsData.cs" />
-    <Compile Include="Models\TemperatureForDays.cs" />
-    <Compile Include="Models\TemperatureForHours.cs" />
+    <Compile Include="Models\SensorTableModels\TemperatureForDays.cs" />
+    <Compile Include="Models\SensorTableModels\TemperatureForHours.cs" />
     <Compile Include="Services\Bot.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\HelloCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DBInitializer.cs" />
     <Compile Include="Services\WeatherContext.cs" />
   </ItemGroup>
   <ItemGroup>
