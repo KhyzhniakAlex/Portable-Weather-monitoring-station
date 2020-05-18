@@ -6,7 +6,10 @@ namespace WeatherAnalyzerServer.Services
     public class WeatherContext : DbContext
     {
         public WeatherContext() : base("DbConnection")
-        { }
+        {
+            Database.SetInitializer(new DBInitializer());
+        }
+
 
         public DbSet<ControllerLocation> ControllerLocation { get; set; }
         public DbSet<TemperatureForDays> TemperatureForDays { get; set; }

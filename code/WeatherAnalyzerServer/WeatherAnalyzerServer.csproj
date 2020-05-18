@@ -224,6 +224,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005101631150_InitialCreate.cs" />
+    <Compile Include="Migrations\202005101631150_InitialCreate.designer.cs">
+      <DependentUpon>202005101631150_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\Base.cs" />
     <Compile Include="Models\ControllerLocation.cs" />
@@ -259,6 +264,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\WeatherAnalyzerTelegramBotServer - Web Deploy.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202005101631150_InitialCreate.resx">
+      <DependentUpon>202005101631150_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

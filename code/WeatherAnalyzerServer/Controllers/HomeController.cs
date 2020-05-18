@@ -2,6 +2,7 @@
 using System.Configuration;
 using StackExchange.Redis;
 using System;
+using WeatherAnalyzerServer.Services;
 
 namespace WeatherAnalyzerServer.Controllers
 {
@@ -16,6 +17,7 @@ namespace WeatherAnalyzerServer.Controllers
         public string Index()
         {
             IDatabase cache = lazyConnection.Value.GetDatabase();
+            new WeatherContext();
 
             string temperature = cache.StringGet("Temperature").ToString();
             string humidity = cache.StringGet("Humidity").ToString();

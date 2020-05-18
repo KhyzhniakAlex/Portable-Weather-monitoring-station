@@ -163,7 +163,6 @@ D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnal
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Telegram.Bot.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Antlr3.Runtime.pdb
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\WeatherAnalyzerServer.csprojAssemblyReference.cache
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\WeatherAnalyzerServer.csproj.CopyComplete
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\WeatherAnalyzerServer.dll
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\WeatherAnalyzerServer.pdb
@@ -210,3 +209,6 @@ D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnal
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\System.Threading.Channels.xml
 D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\bin\System.Threading.Tasks.Extensions.xml
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\WeatherAnalyzerServer.csprojAssemblyReference.cache
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\WeatherAnalyzerServer.Migrations.InitialCreate.resources
+D:\Programming\Диплом\Portable-Weather-monitoring-station\code\WeatherAnalyzerServer\obj\Debug\WeatherAnalyzerServer.csproj.GenerateResource.cache

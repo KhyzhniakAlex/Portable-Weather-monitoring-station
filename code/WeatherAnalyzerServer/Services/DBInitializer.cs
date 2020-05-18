@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using WeatherAnalyzerServer.Models;
-using System.Linq;
-using System.Web;
 
 namespace WeatherAnalyzerServer.Services
 {
@@ -176,6 +173,7 @@ namespace WeatherAnalyzerServer.Services
 
 
             context.SaveChanges();
+            base.Seed(context);
         }
     }
 }

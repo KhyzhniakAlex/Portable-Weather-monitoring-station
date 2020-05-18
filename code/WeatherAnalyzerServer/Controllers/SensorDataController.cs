@@ -5,6 +5,7 @@ using WeatherAnalyzerServer.Models;
 using System;
 using System.Configuration;
 using StackExchange.Redis;
+using WeatherAnalyzerServer.Services;
 
 namespace WeatherAnalyzerServer.Controllers
 {
@@ -16,6 +17,8 @@ namespace WeatherAnalyzerServer.Controllers
             string cacheConnection = ConfigurationManager.AppSettings["CacheConnection"].ToString();
             return ConnectionMultiplexer.Connect(cacheConnection);
         });
+
+        private WeatherContext context;
 
         [HttpPost]
         public HttpResponseMessage GetSensorData(SensorsData data)
@@ -36,6 +39,16 @@ namespace WeatherAnalyzerServer.Controllers
                     //cache.KeyExpire("Pressure", new TimeSpan(24, 0, 0));
                     //cache.KeyExpire("HeatIndex", new TimeSpan(24, 0, 0));
                 }
+
+                var hours = DateTime.Now.Hour;
+
+                if (DateTime.Now.AddMinutes(-5).Hour < hours || (hours == 0 && DateTime.Now.AddMinutes(-5).Hour == 23))
+                {
+                    // Implement
+                }
+
+
+
                 return Request.CreateResponse(HttpStatusCode.OK);
             } 
             catch(Exception ex)
