@@ -8,6 +8,7 @@ namespace WeatherAnalyzerServer.Services
         public WeatherContext() : base("DbConnection")
         {
             Database.SetInitializer(new DBInitializer());
+            //Database.Initialize(true);
         }
 
 
