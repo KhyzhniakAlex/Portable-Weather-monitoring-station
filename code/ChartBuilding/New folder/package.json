@@ -1,0 +1,19 @@
+{
+  "name": "weather-chart-building",
+  "version": "0.0.1",
+  "main": "./",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KhyzhniakAlex/Portable-Weather-monitoring-station.git"
+  },
+  "license": "ISC",
+  "scripts": {
+    "driver-clean": "webdriver-manager clean",
+    "driver-update": "webdriver-manager update --versions.chrome 79.0.3945.36 --gecko false",
+    "driver-status": "webdriver-manager status"
+  },
+  "dependencies": {
+    "chart": "2.9.3",
+    "chart.js": "^2.9.3"
+  }
+}
